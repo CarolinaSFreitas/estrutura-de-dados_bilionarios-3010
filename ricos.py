@@ -30,8 +30,9 @@ def compara_paises():
     titulo("Comparativo entre Países")
 
     pais1 = input("1º País: ").upper()
-    pais2 = input("2º País").upper()
+    pais2 = input("2º País: ").upper()
 
+    #primeiro país
     conta1 = 0
 
     print(f"\nBilionários: {pais1}")
@@ -40,11 +41,28 @@ def compara_paises():
 
     for rico in ricos:
         if (rico['country'].upper() == pais1):
-            conta1 =+ 1
+            conta1 += 1
             print(f"{rico['rank']:>4} {rico['name'][0:30]:30} {rico['industry']:20} {rico['net_worth']:>5}")
 
     print("-"*75)
     print(f"Total de Bilionários - {pais1}: {conta1}")
+
+    input()
+
+    #segundo país
+    conta2 = 0
+
+    print(f"\nBilionários: {pais2}")
+ 
+    print("\nRank Nome.......................... Atividade........... Bills")
+
+    for rico in ricos:
+        if (rico['country'].upper() == pais2):
+            conta2 += 1
+            print(f"{rico['rank']:>4} {rico['name'][0:30]:30} {rico['industry']:20} {rico['net_worth']:>5}")
+
+    print("-"*75)
+    print(f"Total de Bilionários - {pais2}: {conta2}")
 
 
 def agrupa_atividade():
