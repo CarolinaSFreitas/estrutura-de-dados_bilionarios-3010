@@ -1,4 +1,6 @@
+import matplotlib.pyplot as plt
 import csv
+
 ricos = []
 
 def carrega_dados():
@@ -90,8 +92,30 @@ def agrupa_atividade():
 
 
 def grafico_atividades():
-    pass
+    titulo("Gráfico por Atividades")
+    fig, ax = plt.subplots()                   #do matplotlib
 
+    atividades = []
+    numeros = []
+
+    for rico in ricos:
+        if rico['industry'] in atividades:
+            indice = atividades.index(rico['industry'])
+            numeros[indice] += 1
+        else:
+            atividades.append(rico['industry'])
+            numeros.append(1)
+
+    numeros2, atividades2 = zip(*sorted(zip(numeros, atividades), reverse=True))    #esse reverse=True ordena de forma decrescente
+
+    bar_colors = ['tab:red', 'tab:blue', 'tab:red', 'tab:orange', 'tab:red', 'tab:green']
+
+    ax.bar(atividades2[0:6], numeros2[0:6], color = bar_colors)
+
+    ax.set_ylabel('Nº de Bilionários')
+    ax.set_title('Gráfico Comparando Atividades dos Bilionários')
+    plt.tight_layout()      #ajusta os nomes das atividades
+    plt.show()           #mostra o gráfico
 
 # ---------------------------------------------------------------------  Programa Principal
 carrega_dados()
