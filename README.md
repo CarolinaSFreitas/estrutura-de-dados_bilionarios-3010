@@ -5,3 +5,6 @@ Aula do dia 30/10 de Estrutura de Dados com Python, usando o dataset do Kaggle "
 + https://www.kaggle.com/datasets/sujalluhar/billionaires-listed-in-forbes
 + https://matplotlib.org/
 + https://www.programiz.com/python-programming/methods/built-in/zip
+
+Gráfico resultante:
+![image](https://github.com/CarolinaSFreitas/estrutura-de-dados_bilionarios-3010/assets/99994934/9e9e7d23-29a7-454e-afeb-3b987dc2eee5)
