@@ -12,10 +12,10 @@ Gráfico resultante:
 ***
 
 **Exercícios:**
-  Agrupar os bilionários por faixa etária:
-    + Até 30 anos
-    + Entre 31 e 40 anos
-    + Entre 41 e 50 anos
-    + Entre 51 e 60 anos
-    + Acima de 60 anos   
+Agrupar os bilionários por faixa etária:
+  + Até 30 anos
+  + Entre 31 e 40 anos
+  + Entre 41 e 50 anos
+  + Entre 51 e 60 anos
+  + Acima de 60 anos   
  e gerar um gráfico de pizza desses dados.
