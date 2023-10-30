@@ -43,6 +43,8 @@ def compara_paises():
             conta1 =+ 1
             print(f"{rico['rank']:>4} {rico['name'][0:30]:30} {rico['industry']:20} {rico['net_worth']:>5}")
 
+    print("-"*75)
+    print(f"Total de Bilionários - {pais1}: {conta1}")
 
 
 def agrupa_atividade():
