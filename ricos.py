@@ -15,15 +15,36 @@ def titulo(texto, traco="-"):
 def top_20():
     titulo("Top 20: Bilionários")
     
-    print("\nNº Nome........................ Pais........................ Atividade........................ Bills")
+    print("\nNº Nome.......................... Pais................ Atividade........... Bills")
     
     contador = 0 
 
     for rico in ricos:
         contador += 1
-        print(f"{contador:2d} {rico['name']:20} {rico['country']:20} {rico['industry']:20} {rico['net_worth']:>5}")
+        print(f"{contador:2d} {rico['name'][0:30]:30} {rico['country']:20} {rico['industry']:20} {rico['net_worth']:>5}")
         if contador == 20:
             break
+
+
+def compara_paises():
+    titulo("Comparativo entre Países")
+
+    pais1 = input("1º País: ").upper()
+    pais2 = input("2º País").upper()
+
+    conta1 = 0
+
+    
+
+
+
+def agrupa_atividade():
+    pass
+
+
+def grafico_atividades():
+    pass
+
 
 # ---------------------------------------------------------------------  Programa Principal
 carrega_dados()
@@ -37,11 +58,11 @@ while True:
     print("5. Finalizar")
     opcao = int(input("Opção: "))
     if opcao == 1:
-        top_2()
+        top_20()
     elif opcao == 2:
         compara_paises()
     elif opcao == 3:
-        agrupar_atividade()
+        agrupa_atividade()
     elif opcao == 4:
         grafico_atividades()
     else:
