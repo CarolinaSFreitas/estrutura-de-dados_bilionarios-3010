@@ -34,7 +34,14 @@ def compara_paises():
 
     conta1 = 0
 
-    
+    print(f"\nBilionários: {pais1}")
+ 
+    print("\nRank Nome.......................... Atividade........... Bills")
+
+    for rico in ricos:
+        if (rico['country'].upper() == pais1):
+            conta1 =+ 1
+            print(f"{rico['rank']:>4} {rico['name'][0:30]:30} {rico['industry']:20} {rico['net_worth']:>5}")
 
 
 
