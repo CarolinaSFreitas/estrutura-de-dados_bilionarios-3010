@@ -21,9 +21,9 @@ def top_20():
 
     for rico in ricos:
         contador += 1
-
         print(f"{contador:2d} {rico['name']:20} {rico['country']:20} {rico['industry']:20} {rico['net_worth']:>5}")
-        
+        if contador == 20:
+            break
 
 # ---------------------------------------------------------------------  Programa Principal
 carrega_dados()
