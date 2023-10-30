@@ -7,10 +7,12 @@ def carrega_dados():
         for linha in csv_reader:
             ricos.append(linha)    # lista de dicionários
 
+
 def titulo(texto, traco="-"):
     print()
     print(texto)
     print(traco*40)
+
 
 def top_20():
     titulo("Top 20: Bilionários")
@@ -43,7 +45,6 @@ def compara_paises():
         if (rico['country'].upper() == pais1):
             conta1 += 1
             print(f"{rico['rank']:>4} {rico['name'][0:30]:30} {rico['industry']:20} {rico['net_worth']:>5}")
-
     print("-"*75)
     print(f"Total de Bilionários - {pais1}: {conta1}")
 
@@ -66,7 +67,26 @@ def compara_paises():
 
 
 def agrupa_atividade():
-    pass
+    titulo("Agrupar por Atividade")
+    
+    atividades = []
+    numeros = []
+
+    for rico in ricos:
+        if rico['industry'] in atividades:
+            indice = atividades.index(rico['industry'])
+            numeros[indice] += 1
+        else:
+            atividades.append(rico['industry'])
+            numeros.append(1)
+        
+    # ordena por ordem decrescente de numeros    
+    numeros2, atividades2 = zip(*sorted(zip(numeros, atividades), reverse=True))    #esse reverse=True ordena de forma decrescente
+
+    print("Atividade.....................: Numero")
+
+    for ativ, num in zip(atividades2, numeros2):
+        print(f"{ativ:30} {num:5d}")
 
 
 def grafico_atividades():
