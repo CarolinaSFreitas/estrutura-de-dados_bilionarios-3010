@@ -20,7 +20,12 @@ Agrupar os bilionários por faixa etária:
   + Acima de 60 anos
    
  e gerar um gráfico de pizza desses dados:
- ![image](https://github.com/CarolinaSFreitas/estrutura-de-dados_bilionarios-3010/assets/99994934/83841026-4aa7-4dad-a455-f43f0e01b439)
+![image](https://github.com/CarolinaSFreitas/estrutura-de-dados_bilionarios-3010/assets/99994934/cc38667f-0984-4819-912d-5b58dc79f035)
+
+***
+
+Gráfico Boxplot das idades:
+![image](https://github.com/CarolinaSFreitas/estrutura-de-dados_bilionarios-3010/assets/99994934/403aaa14-49fc-401e-8d1d-be880a3b9d57)
 
 ***
 
