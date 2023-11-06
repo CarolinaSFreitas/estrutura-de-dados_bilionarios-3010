@@ -124,6 +124,7 @@ def grafico_idades():
 
     faixas = ["Até 30 anos", "Entre 31 e 40", "Entre 41 e 50", "Entre 51 e 60", "Acima de 60"]
     numeros = [0, 0, 0, 0, 0]
+    explode = (0, 0, 0, 0, 0.1)
 
     for rico in ricos:
         #se o campo tem conteudo (alguns estão vazios no csv)
@@ -140,10 +141,10 @@ def grafico_idades():
             else:
                 numeros[4] += 1
 
-    ax.pie(numeros, labels=faixas, autopct='%.1f%%')  #esse "autopct='%1.1f%%'" mostra com porcentagem no gráfico
+    ax.pie(numeros, labels=faixas, autopct='%.1f%%', explode=explode, shadow=True)  #esse "autopct='%1.1f%%'" mostra com porcentagem no gráfico
 
     ax.set_title('Gráfico Comparando Idades dos Bilionários')
-    plt.show()           #mostra o gráfico
+    plt.show()           
 
 # ---------------------------------------------------------------------  Programa Principal
 carrega_dados()
