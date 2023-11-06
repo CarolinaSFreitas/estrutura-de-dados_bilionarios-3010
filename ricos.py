@@ -124,7 +124,7 @@ def grafico_idades():
 
     faixas = ["Até 30 anos", "Entre 31 e 40", "Entre 41 e 50", "Entre 51 e 60", "Acima de 60"]
     numeros = [0, 0, 0, 0, 0]
-    explode = (0, 0, 0, 0, 0.1)
+    explode = (0, 0, 0, 0, 0.1)     #esse 0.1 afasta o valor em fatia da quinta posição em faixas
 
     for rico in ricos:
         #se o campo tem conteudo (alguns estão vazios no csv)
@@ -146,6 +146,22 @@ def grafico_idades():
     ax.set_title('Gráfico Comparando Idades dos Bilionários')
     plt.show()           
 
+
+def boxplot_idades():
+    titulo("Gráfico Boxplot de Idades dos Bilionários")
+
+    idades = []
+    for rico in ricos:
+        if rico['age']:
+            idades.append(float(rico['age']))
+
+    fig, ax = plt.subplots()
+    ax.boxplot(idades)
+    plt.show()
+ 
+
+
+
 # ---------------------------------------------------------------------  Programa Principal
 carrega_dados()
 
@@ -156,7 +172,8 @@ while True:
     print("3. Agrupar por Atividade")
     print("4. Gráfico Relacionando Atividades")
     print("5. Gráfico Comparando Idades")
-    print("6. Finalizar")
+    print("6. Gráfico Boxplot de Idades")
+    print("7. Finalizar")
     opcao = int(input("Opção: "))
     if opcao == 1:
         top_20()
@@ -168,6 +185,8 @@ while True:
         grafico_atividades()
     elif opcao == 5:
         grafico_idades()
+    elif opcao == 6:
+        boxplot_idades()
     else:
         break
 
