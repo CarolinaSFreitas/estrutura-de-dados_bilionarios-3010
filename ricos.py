@@ -117,6 +117,34 @@ def grafico_atividades():
     plt.tight_layout()      #ajusta os nomes das atividades
     plt.show()           #mostra o gráfico
 
+
+def grafico_idades():
+    titulo("Gráfico Comparando Idade do Bilionários")
+    fig, ax = plt.subplots()                   #do matplotlib
+
+    faixas = ["Até 30 anos", "Entre 31 e 40", "Entre 41 e 50", "Entre 51 e 60", "Acima de 60"]
+    numeros = [0, 0, 0, 0, 0]
+
+    for rico in ricos:
+        #se o campo tem conteudo (alguns estão vazios no csv)
+        if rico['age']:
+            idade = float(rico['age'])
+            if idade <= 30:
+                numeros[0] += 1
+            elif idade <= 40:
+                numeros[1] += 1
+            elif idade <= 40:
+                numeros[2] += 1
+            elif idade <= 60:
+                numeros[3] += 1
+            else:
+                numeros[4] += 1
+
+    ax.pie(numeros, labels=faixas, autopct='%.1f%%')  #esse "autopct='%1.1f%%'" mostra com porcentagem no gráfico
+
+    ax.set_title('Gráfico Comparando Idades dos Bilionários')
+    plt.show()           #mostra o gráfico
+
 # ---------------------------------------------------------------------  Programa Principal
 carrega_dados()
 
@@ -126,7 +154,8 @@ while True:
     print("2. Comparativo entre 2 Países")
     print("3. Agrupar por Atividade")
     print("4. Gráfico Relacionando Atividades")
-    print("5. Finalizar")
+    print("5. Gráfico Comparando Idades")
+    print("6. Finalizar")
     opcao = int(input("Opção: "))
     if opcao == 1:
         top_20()
@@ -136,7 +165,8 @@ while True:
         agrupa_atividade()
     elif opcao == 4:
         grafico_atividades()
+    elif opcao == 5:
+        grafico_idades()
     else:
         break
-
 
