@@ -151,16 +151,18 @@ def boxplot_idades():
     titulo("Gráfico Boxplot de Idades dos Bilionários")
 
     idades = []
+    nomes = []
     for rico in ricos:
         if rico['age']:
             idades.append(float(rico['age']))
+            if float(rico["age"]) >= 100:
+                nomes.append(rico['name'])
+    print(nomes)
 
     fig, ax = plt.subplots()
     ax.boxplot(idades)
     plt.show()
  
-
-
 
 # ---------------------------------------------------------------------  Programa Principal
 carrega_dados()
