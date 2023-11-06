@@ -22,3 +22,5 @@ Agrupar os bilionários por faixa etária:
  e gerar um gráfico de pizza desses dados:
  ![image](https://github.com/CarolinaSFreitas/estrutura-de-dados_bilionarios-3010/assets/99994934/83841026-4aa7-4dad-a455-f43f0e01b439)
 
+***
+
